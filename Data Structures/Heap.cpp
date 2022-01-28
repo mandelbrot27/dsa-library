@@ -37,11 +37,13 @@ void insert(vector<int>& heap,int k)
     siftup(heap,heap.size()-1);
 }
 
-void extractmin(vector<int>& heap)
+int extractmin(vector<int>& heap)
 {
+    int k=heap[0];
     swap(heap[0],heap[heap.size()-1]);
     heap.pop_back();
     siftdown(heap,0);
+    return k;
 }
 
 int main()
