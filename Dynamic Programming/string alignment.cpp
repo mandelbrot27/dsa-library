@@ -6,7 +6,8 @@ pair<string,string> aligned_strings(string x, string y)
     x="#"+x;
     y="#"+ y;   // converting strings to 1-based index
     
-    long long dp[x.length()+1][y.length()+1];
+    long long dp[x.length()+1][y.length()+1];  // dp[i][j] calculates penalty for optimally aligned strings for x[1-> i] & y[1->j]. optimally aligned strings
+                                               // are equal in length.
     int penalty_gap=1,penalty_mismatch=1;
 
     for(int i=0;i<=x.length();i++) dp[i][0]=penalty_gap*i;
